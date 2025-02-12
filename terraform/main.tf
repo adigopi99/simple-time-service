@@ -1,4 +1,4 @@
-# Root module for infrastructure (VPC, EKS
+# Root module for infrastructure (VPC, EKS)
 
 provider "aws" {
   region = var.region
