@@ -37,7 +37,7 @@ sudo yum install git -y
 # To Build and Run the Docker Container:
 
 1. Clone the repository:
-
-   git clone https://github.com/adigopi99/Assessment-Project.git
-   cd Assessment-Project
+   git clone https://github.com/adigopi99/simple-time-service.git
+   cd simple-time-service
+   
 
