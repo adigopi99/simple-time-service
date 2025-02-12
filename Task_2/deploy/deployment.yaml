@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-time-service
+  labels:
+    app: simple-time-service
+spec:
+  replicas: 1  # Number of pods (change as needed)
+  selector:
+    matchLabels:
+      app: simple-time-service
+  template:
+    metadata:
+      labels:
+        app: simple-time-service
+    spec:
+      containers:
+      - name: simple-time-service
+        image: gopiadi/simple-time-service:latest  # Replace with the appropriate image tag
+        ports:
+        - containerPort: 80  # Expose the app on port 80 inside the container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-time-service
+spec:
+  selector:
+    app: simple-time-service
+  ports:
+    - protocol: TCP
+      port: 80  # Port to expose externally
+      targetPort: 80  # Port inside the container
+  type: LoadBalancer  # This will expose the service using a load balancer
+
